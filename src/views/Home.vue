@@ -1,13 +1,13 @@
 <template>
   <div>
-      <h1>首页</h1>
-      <Header></Header>
+      <Nav></Nav>
   </div>
 </template>
 
 <script>
+import Header from '../components/Header.vue'
 export default {
-  
+  components: { Header },
   data () {
     return {
       msg: ''
@@ -20,5 +20,5 @@ export default {
 </script>
 
 <style scoped>
-
+  
 </style>

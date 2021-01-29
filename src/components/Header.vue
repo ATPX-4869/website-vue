@@ -1,46 +1,92 @@
 <template>
-  <div>
-      <el-menu
-  :default-active="activeIndex2"
-  class="el-menu-demo"
-  mode="horizontal"
-  @select="handleSelect"
-  background-color="#545c64"
-  text-color="#fff"
-  active-text-color="#ffd04b">
-  <el-menu-item index="1">处理中心</el-menu-item>
-  <el-submenu index="2">
-    <template slot="title">我的工作台</template>
-    <el-menu-item index="2-1">选项1</el-menu-item>
-    <el-menu-item index="2-2">选项2</el-menu-item>
-    <el-menu-item index="2-3">选项3</el-menu-item>
-    <el-submenu index="2-4">
-      <template slot="title">选项4</template>
-      <el-menu-item index="2-4-1">选项1</el-menu-item>
-      <el-menu-item index="2-4-2">选项2</el-menu-item>
-      <el-menu-item index="2-4-3">选项3</el-menu-item>
-    </el-submenu>
-  </el-submenu>
-  <el-menu-item index="3" disabled>消息中心</el-menu-item>
-  <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
-</el-menu>
-  </div>
+  <el-container class="home-container">
+    <el-header>
+      
+          <div class="header">
+            <!-- 导航条 -->
+          <el-menu
+            class="el-menu-demo"
+            mode="horizontal"
+            background-color="rgba(0,0,0,0)"
+            text-color="#fff"
+            active-text-color="#ffd04b"
+          >
+            <el-menu-item index="1">首页</el-menu-item>
+            <el-menu-item index="2">分类</el-menu-item>
+            <el-menu-item index="3">标签</el-menu-item>
+            <el-menu-item index="4">归档</el-menu-item>
+            <el-menu-item index="5">归档</el-menu-item>
+          </el-menu>
+        
+          <!-- 搜索框 -->
+          <el-input
+            class="search"
+            placeholder="请输入内容"
+            prefix-icon="el-icon-search"
+            v-model="input1"
+          >
+          </el-input>
+          </div>
+        
+    </el-header>
+  </el-container>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      msg: ''
-    }
+      input1: ""
+    };
   },
   methods: {
-
-  }
-}
+    
+  },
+};
 </script>
 
-<style scoped>
+<style >
+.home-container {
+  width: 100%;
+  height: 900px;
+  background-image: url("../assets/img/header-back.png");
+  background-size: cover;
+  
+  
+}
+.header {
+  display: flex; 
+  flex-direction: row; 
+  height: 60px; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 0 8rem 0 8rem;
+  
+}
+
+.el-menu-demo {
+  width: 600px;
+}
+
+.el-textarea__inner,.el-input__inner{
+        background: transparent;
+        color: white;
+   }
+
+.search {
+  width: 200px;
+}
+
+.el-menu.el-menu--horizontal{
+  border-bottom: solid 1px rgba(0,0,0,0);
+}
+
+.el-input__inner::-webkit-input-placeholder {
+        color: #fff;
+    }
+
+.el-icon-search:before{
+  color: #fff;
+}
 
 </style>
-
